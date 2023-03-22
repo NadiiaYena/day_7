@@ -1,3 +1,4 @@
+// додавання категорій в фільтр-ліст
 const tableForFiltr = JSON.parse(localStorage.getItem('savedTableData'));
 console.log(tableForFiltr)
 
@@ -52,5 +53,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
   
 
-  //ФІЛЬТРУВАННЯ ==========
-  
+  //ФІЛЬТРУВАННЯ колонки адреса ==========
+//

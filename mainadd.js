@@ -516,47 +516,6 @@ function handleCheckboxes() {
   }
   mainBoxName.addEventListener ("click", selectAllFiltrName)
 
-
-  // код для третьої функції Address
- 
-  const mainBoxAddress = document.querySelector('.check0');
-  const boxesAddress = document.querySelectorAll('#townData div .check3')
-  console.log(boxesAddress)
-
-  for (const check of boxesAddress){
-      check.addEventListener("click", selectBoxesAddress)
-  }
-  function selectBoxesAddress(){
-      let checkedCount = 0;
-      for(const check of boxesAddress) {
-          if (check.checked) {
-              checkedCount++;
-          }
-      }
-
-    if (checkedCount ===0) {
-      mainBoxAddress.checked = false;
-      mainBoxAddress.indeterminate = false;
-    } else if ( checkedCount == boxesAddress.length) {
-      mainBoxAddress.checked = true;
-      mainBoxAddress.indeterminate = false;
-    } else {
-      mainBoxAddress.checked = false;
-      mainBoxAddress.indeterminate = true;
-    }
-  }
-
-  function selectAllFiltrAddress() {
-      for(const check of boxesAddress){
-        if (mainBoxAddress.checked == true) {
-          check.checked = true
-        } else if(mainBoxAddress.checked == false){
-          check.checked = false
-        }
-      }
-  }
-  mainBoxAddress.addEventListener ("click", selectAllFiltrAddress)
-  //=====
   // зміна виду кнопки reset Name============
 
   const checkboxesname = document.querySelectorAll('.check1');
@@ -615,10 +574,52 @@ function handleCheckboxes() {
     resetButton.style.color = 'grey';
   });
 
+
+  // код для третьої функції Address ===================
+ 
+  const mainBoxAddress = document.querySelector('.check0');
+  const boxesAddress = document.querySelectorAll('#townData div .check3')
+  console.log(boxesAddress)
+
+  for (const check of boxesAddress){
+      check.addEventListener("change", selectBoxesAddress) //прослуховуємо чекбокс кожної опції
+  }
+  function selectBoxesAddress(){  //вплив чекбоксів на загальний чекбокс
+      let checkedCount = 0;
+      for(const check of boxesAddress) {
+          if (check.checked) {
+              checkedCount++;
+          }
+      }
+
+    if (checkedCount ===0) {
+      mainBoxAddress.checked = false;
+      mainBoxAddress.indeterminate = false;
+    } else if ( checkedCount == boxesAddress.length) {
+      mainBoxAddress.checked = true;
+      mainBoxAddress.indeterminate = false;
+    } else {
+      mainBoxAddress.checked = false;
+      mainBoxAddress.indeterminate = true;
+    }
+  }
+
+  function selectAllFiltrAddress() { //вплив загального чекбокса на чекбокси опцій
+      for(const check of boxesAddress){
+        if (mainBoxAddress.checked == true) {
+          check.checked = true
+        } else if(mainBoxAddress.checked == false){
+          check.checked = false
+        }
+      }
+  }
+  mainBoxAddress.addEventListener ("change", selectAllFiltrAddress) //відслідковуємо головний чекбокс
+ 
+
   // зміна кнопки reset Address =========================
 
   const searchFieldAddress = document.querySelector('#inpAddress') 
-  const checkboxAddressAll = document.querySelector('.check0')
+  // const checkboxAddressAll = document.querySelector('.check0')
   const resetAddress = document.querySelector('#resetAddress')
   console.log(resetAddress)
   const checkboxAddress = document.querySelectorAll('#townData div .check3')
@@ -627,7 +628,9 @@ function handleCheckboxes() {
   for (const check of checkboxAddress) {
     console.log(check)
     check.addEventListener('change', changeResetAddress) //відслідковуємо кожний чекбокс
-   
+  } 
+   mainBoxAddress.addEventListener("change", changeResetAddress)
+   searchFieldAddress.addEventListener("input", changeResetAddress)
   function changeResetAddress() {  //змінюємо вид кнопки ресет в залежності від стану чекбоксів
     let checkedcount = 0
     for (const check of checkboxAddress) {
@@ -637,10 +640,10 @@ function handleCheckboxes() {
       }
     }
 
-    if(checkedcount>0 && check.checked) {
+    if(checkedcount>0) {
       resetAddress.style.cursor = 'pointer';
       resetAddress.style.color = 'blue';
-      } else if (checkboxAddressAll.checked || checkboxAddressAll.indeterminate) {
+      } else if (mainBoxAddress.checked || searchFieldAddress.value !== '') {
       resetAddress.style.cursor = 'pointer';
       resetAddress.style.color = 'blue';
       } else {
@@ -648,30 +651,21 @@ function handleCheckboxes() {
       resetAddress.style.color = 'grey';
     }
   }
-  
-  if ( searchFieldAddress.value !== ''){
-    resetAddress.style.cursor = 'pointer';
-    resetAddress.style.color = 'blue';
-  } else {
-    resetAddress.style.cursor = 'not-allowed';
-    resetAddress.style.color = 'grey';
-  }
 
   resetAddress.addEventListener('click', function(){ //очищаємо фільтр
-    const checkboxAddress = document.querySelectorAll('#townData div .check3')
+    // const checkboxAddress = document.querySelectorAll('#townData div .check3')
     for (const check of checkboxAddress) {
       check.checked = false;
     }
-    checkboxAddressAll.checked = false;
-    checkboxAddressAll.indeterminate = false;
+    mainBoxAddress.checked = false;
+    mainBoxAddress.indeterminate = false;
     resetAddress.style.cursor = 'not-allowed';
     resetAddress.style.color = 'grey'
     searchFieldAddress.value = '';
     })
-  }
-  checkboxAddressAll.addEventListener('change', changeResetAddress) //відслідковуємо загальний чекбокс
-  searchFieldAddress.addEventListener('input', changeResetAddress)// відслідковуємо поле вводу
 }
+  
+
 // виклик функції
 window.onload = function() {
   handleCheckboxes();
