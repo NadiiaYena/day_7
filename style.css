@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif
+}
+.main {
+    width: 800px;
+    margin: 20px auto;
+}
+.form {
+    max-width: 800px;
+    margin: 20px auto;
+}
+.itemForm {
+    display: flex;
+    flex-direction: row;
+}
+.label {
+    width: 130px;
+}
+.tableInput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.tableInput input {
+    width: 400px;
+    min-width: 200px;
+}
+.footerInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.table tr {
+    height: 40px;
+}
+th {
+    text-align: left;
+}
+button {
+    width: 70px;
+    height: 20px;
+    border-radius: 5px;
+    
+  }
+.tableInput td {
+    width: auto;
+    max-width: 400px;
+    min-width: 100px;
+}
+
+.tableOut {
+    margin-top: 30px;
+}
+
+.table{
+    max-width: 800px;
+    width: 800px;
+   margin: 0 auto;
+   border-collapse: separate;
+   border-spacing: 0;
+}
+
+thead th:first-child {
+    border-top-left-radius: 8px;
+}
+  
+thead th:last-child {
+    border-top-right-radius: 8px;
+}
+.table td, .table th{
+    padding-left: 5px;
+    border-bottom: 1px solid gray;
+}
+
+thead tr{
+    background-color: rgb(233, 233, 233);
+}
+ 
+.input{
+    width: 25px;
+}
+.filtr{
+    display: inline-block;
+   z-index: 1;
+    height: 15px;
+    width: 15px;
+    opacity: 80%;
+}
+.f {
+ position: relative;
+ display: flex;
+ justify-content: space-between;
+ padding-right: 15px;
+}
+  
+.sort, .filtr{
+    cursor: pointer;
+}
+.age {
+    max-width: 30px;
+}
+.name {
+    max-width: 80px;
+}
+.addressColumn {
+    max-width: 80px;
+}
+.check {
+    width: 25px;
+}
+
+.arrows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.ageFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+.up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent #000000 transparent;
+}
+
+.down {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 6px 0 6px;
+    border-color: #000000 transparent transparent transparent;
+}
+
+.upActive {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6px 8px 6px;
+    border-color: transparent transparent blue transparent;
+}
+.downActive {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 6px 0 6px;
+    border-color: blue transparent transparent transparent;
+}
+
+.filtrAria {
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: 150px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(244, 244, 244);
+    top: 100%;
+    right: 0;
+}
+.lupa {
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+    
+}
+.searchInput {
+height: 25px;
+border: #000000 solid 1px;
+border-radius: 5px;
+background-color: white;
+padding: 3px;
+margin-bottom: 5px;
+}
+.pic, .inp {
+    display: inline-block;
+    vertical-align: middle;
+}
+.name2 {
+    margin-left: 18px;
+}
+#townData div {
+    margin-left: 18px;
+}
+.inpS {
+    border: none;
+    max-width: 120px;
+    outline: none;
+}
+.category, .towns {
+    padding: 3px;
+    font-size: 14px;
+    /* position: relative; */
+}
+.check00, .check1, .check11, .check2, .check3 {
+    vertical-align: middle;
+}
+label {
+    vertical-align: middle;
+}
+.arrowCategory {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent #007bff;
+    display: inline-block;
+}
+.arrowCategory {
+    display: inline-block;
+    cursor: pointer;
+}
+.cat1 {
+    display: inline-block;
+}
+.arrow-check-category {
+    padding-left: 6px;
+}
+.subCatigory {
+    margin-left: 40px;
+    display: none;
+}
+
+.filtrAria1 {
+    max-height: 200px;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: 150px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(244, 244, 244);
+    top: 100%;
+    right: 0;
+    overflow: auto;
+}
+.br {
+height: 1px;
+background-color: grey;
+margin-top: 2px;
+margin-bottom: 2px;
+}
+#resetName {
+    color: grey;
+    width: auto;
+    border: none;
+    background: none;
+    cursor: not-allowed;
+    display: block;
+}
+.ok {
+    color: white;
+    width: auto;
+    border-color: #007bff;
+    background-color: #007bff;
+    cursor: pointer;
+    display: block;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#resetAddress {
+    color: grey;
+    width: auto;
+    border: none;
+    background: none;
+    cursor: not-allowed;
+    display: block;
+}
+#tableData tr:hover {
+    background-color: rgb(234, 234, 234);
+    transition: 300ms;
+}
+.sort:hover {
+    background-color: rgb(203, 202, 202);
+}
+
+.buttonsbottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day_7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <form class="form" id="myForm">
+            <div class="tableIn">
+                <div id="myTableInput" class="tableInput">
+                    <div class="itemForm">
+                        <div class="label"><label for="nameInput">Name:</label></div>
+                        <div><input name="nameInput" id="nameInput" pattern="\p{L}+" required></div>
+                      </div>
+                      <div class="itemForm">
+                        <div class="label"><label for="dateInput">Date of birth:</label></div>
+                        <div><input  type="date" name="dateInput" id="dateInput" required></div>
+                      </div>
+                      <!-- <div class="itemForm">
+                        <div class="label"><label for="ageInput">Age:</label></div>
+                        <div><input name="ageInput" id="ageInput" pattern="[0-9]+" required></div>
+                      </div> -->
+                      <div class="itemForm">
+                        <div class="label"><label for="addressInput">Address:</label></div>
+                        <div><input name="addressInput" id="addressInput"></div>
+                      </div>
+                    </div>
+            </div>
+            <div class="footerInput">
+                <button type="submit" form="myForm" class ="submit" id="btn1">Save</button>
+            </div>
+        </form>
+        <div class="upload">
+            <form id="form">
+                <label for="files">Select files:</label>
+                <input type="file" id="files" name="files" multiple method="post" enctype="multipart/form-data">
+                <input type="submit" value="submit" form="form" class="submit" id="btn2">
+            </form>
+        </div>
+        <div class="tableOut" id="tableOut">
+            <table id="myTable" class="table">
+                <thead>
+                  <tr>
+                        <th class="input"><input type="checkbox" name="checkAll" id="checkAll" class="checkCommon"></th>
+                        <th class="name">
+                        <div class="f">
+                            <div>Name</div><span class="filtr" ><img  onclick="showFiltr()" class="filtr" src="57164.png" alt="filtr" id="filtrIcon"></span>
+                            <div class="filtrAria" id="filtrAria">
+                                <div class="searchInput">
+                                    <div class="inp">
+                                        <img src="lupa.png" alt="search" class="lupa">
+                                        <input type="text" placeholder="Search in filters" size="16" class="inpS" id="inpName" value>
+                                    </div>
+                                </div>
+                                <div class="br"></div>
+                                <div class="category">
+                                    <div>
+                                        <div>
+                                            <input type="checkbox" class="check00">
+                                            <label for="checkbox">Select all items</label>
+                                        </div>
+                                        <div class="name2">
+                                            <input type="checkbox" class="check1">
+                                            <label for="checkbox">Name 1</label>
+                                        </div>
+                                        <div class="arrow-check-category">
+                                            <div class="arrowCategory rotate" onclick="rotateArrow()" id="rotate"></div>
+                                            <div class="cat1">
+                                                <input type="checkbox" class="check1 check11">
+                                            <label for="checkbox">Category 1</label>
+                                            </div>
+                                        </div>
+                                        <div class="subCatigory" id="subCatigory">
+                                            <div class="pink">
+                                                <input type="checkbox" class="check1 check2">
+                                                <label for="checkbox">Pink</label>
+                                            </div>
+                                            <div class="yelow">
+                                                <input type="checkbox" class="check1 check2">
+                                                <label for="checkbox">Yelow</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="br"></div>
+                                <div class="buttons">
+                                    <button type="reset" class="reset" id="resetName">Reset</button>
+                                    <button class="ok">OK</button>
+                                </div>
+                            </div>
+                            
+                        </div> 
+                        </th>
+                        <th class="DB">
+                            <div>Date of birth</div>
+                        </th>
+                        <th onclick="sortTableByAge()" class="sort age">
+                            <div class="ageFlex">
+                                <div>Age</div>
+                                <div class="arrows">
+                                    <div class="arrow up"></div> 
+                                    <div class="arrow down"></div>
+                                </div>
+                            </div>
+                            
+                        </th>
+                        <th class="addressColumn">
+                            <div class="f">Address<span class="filtr"><img onclick="showFiltr1()" id="filtrIcon1" class="filtr" src="57164.png" alt="filtr"></span>
+                                <div class="filtrAria1" id="filtrAria1">
+                                    <div class="searchInput">
+                                        <div class="inp">
+                                            <img src="lupa.png" alt="search" class="lupa">
+                                            <input type="text" placeholder="Search in filters" size="16" class="inpS" id="inpAddress" value>
+                                        </div>
+                                    </div>
+                                    <div class="br"></div>
+                                    <div class="towns">
+                                        <div id="selectTown">
+                                            <div>
+                                                <input type="checkbox" class="check0">
+                                                <label for="checkbox">Select all items</label>
+                                            </div>
+                                            <div class="towns" id="towns">
+                                                <div id="townData">
+                                                    <!-- <div class="name1">
+                                                        <input type="checkbox" class="check3">
+                                                        <label for="checkbox">London</label>
+                                                    </div>
+                                                    <div class="name1">
+                                                        <input type="checkbox" class="check3">
+                                                        <label for="checkbox">Paris</label> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="br"></div>
+                                    <div class="buttons">
+                                        <button type="reset" class="reset" id="resetAddress">Reset</button>
+                                        <button class="ok">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                  </tr>
+                </thead>
+                <tbody id="tableData">
+                </tbody>
+              </table>
+              <div class="buttonsbottom">
+                <div class="delete">
+                    <button class="deleteButon" id="delete-button"> Delete</button>
+                  </div>
+                  <div class="download">
+                    <a href="#" download="data.csv">Download</a>
+                  </div>
+              </div>
+              
+        </div>  
+    </div>
+
+    
+    <!-- <script src="main.js"></script> -->
+<script src="import.js"></script>
+<script src="mainadd.js"></script>
+<script src="export.js"></script>
+<script src="filtrCitys.js"></script>
+<script src="sortAge.js"></script>
+</body>
+</html>
+
