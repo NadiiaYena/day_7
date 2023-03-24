@@ -653,18 +653,20 @@ function handleCheckboxes() {
   }
 
   resetAddress.addEventListener('click', function(){ //очищаємо фільтр
-    // const checkboxAddress = document.querySelectorAll('#townData div .check3')
     for (const check of checkboxAddress) {
       check.checked = false;
     }
     mainBoxAddress.checked = false;
     mainBoxAddress.indeterminate = false;
-    resetAddress.style.cursor = 'not-allowed';
-    resetAddress.style.color = 'grey'
     searchFieldAddress.value = '';
+    const townDiv = document.querySelectorAll('#townData div');
+    for (const div of townDiv) {
+      div.style.display = 'block';
+    }
+    resetAddress.style.cursor = 'not-allowed';
+    resetAddress.style.color = 'grey';
     })
 }
-  
 
 // виклик функції
 window.onload = function() {

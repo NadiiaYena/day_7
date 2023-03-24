@@ -298,3 +298,7 @@ margin-bottom: 2px;
     justify-content: space-between;
     padding-top: 20px;
 }
+#townData .hide{
+    /* display: none; */
+    background: #ff9;
+}
