@@ -19,9 +19,9 @@ const csvData = [
   console.log(csvData)
   
   const file = new Blob([csvData], { type: 'text/csv' });
-  console.log(file)
+  // console.log(file)
   const url = URL.createObjectURL(file);
-  console.log(url)
+  // console.log(url)
   
   // Додавання URL до кнопки завантаження
   const downloadButton = document.querySelector('a[download]');

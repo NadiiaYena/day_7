@@ -621,12 +621,12 @@ function handleCheckboxes() {
   const searchFieldAddress = document.querySelector('#inpAddress') 
   // const checkboxAddressAll = document.querySelector('.check0')
   const resetAddress = document.querySelector('#resetAddress')
-  console.log(resetAddress)
+  // console.log(resetAddress)
   const checkboxAddress = document.querySelectorAll('#townData div .check3')
-  console.log(checkboxAddress)
+  // console.log(checkboxAddress)
   
   for (const check of checkboxAddress) {
-    console.log(check)
+    // console.log(check)
     check.addEventListener('change', changeResetAddress) //відслідковуємо кожний чекбокс
   } 
    mainBoxAddress.addEventListener("change", changeResetAddress)
@@ -636,7 +636,7 @@ function handleCheckboxes() {
     for (const check of checkboxAddress) {
       if(check.checked) {
       checkedcount++;
-      console.log(checkedcount)
+      // console.log(checkedcount)
       }
     }
 
