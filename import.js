@@ -84,7 +84,7 @@ const tableRowsForm = document.querySelectorAll('#myTable tbody tr');
         date: row.cells[2].textContent,
         age: row.cells[3].textContent,
         address: row.cells[4].textContent,
-        isChecked: row.cells[0].querySelector('input[type="checkbox"]').checked // Додати стан чекбоксу до об'єкту rowData
+        // isChecked: row.cells[0].querySelector('input[type="checkbox"]').checked // Додати стан чекбоксу до об'єкту rowData
         };
       tableDataForm.push(rowData);
     //   console.log(rowData)
